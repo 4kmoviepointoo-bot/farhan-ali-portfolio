@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin } from "lucide-react";
 
 const LINKS = [
   { label: "Work", href: "#work", active: true },
@@ -24,18 +23,19 @@ export default function Footer() {
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-100/25 rounded-full blur-3xl pointer-events-none translate-x-12 translate-y-12" />
 
       <div className="max-w-[1180px] mx-auto relative z-10">
-        {/* Top Footer Row: 3-Column on Desktop (Brand -> Nav -> Socials) */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-center md:text-left">
+        {/* Top Footer Row: 2-Column on Desktop (Brand -> Nav) */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 md:gap-8 text-center sm:text-left">
           {/* COLUMN 1: Brand Area */}
           <div className="flex items-center gap-3.5 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <motion.div
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
               className="w-10 h-10 rounded-[11px] bg-[#3B82F6] text-white flex items-center justify-center font-bold text-sm shadow-sm shadow-blue-500/20 shrink-0"
             >
               FA
             </motion.div>
-            <div className="flex flex-col items-center md:items-start text-left">
+            <div className="flex flex-col items-center sm:items-start text-left">
               <span className="text-[15px] font-bold text-[#172033] tracking-tight leading-tight">
                 Farhan Ali
               </span>
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           {/* COLUMN 2: Navigation Links */}
-          <nav className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 my-2 md:my-0">
+          <nav className="flex flex-row items-center gap-6 sm:gap-8">
             {LINKS.map((link) => (
               <button
                 key={link.label}
@@ -65,54 +65,6 @@ export default function Footer() {
               </button>
             ))}
           </nav>
-
-          {/* COLUMN 3: Social Icons */}
-          <div className="flex items-center gap-2.5">
-            {/* GitHub Button */}
-            <motion.a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              whileHover={{ y: -3, scale: 1.08 }}
-              whileTap={{ scale: 0.92 }}
-              transition={{ duration: 0.2 }}
-              className="w-9 h-9 rounded-[10px] bg-white border border-[#E2E8F0] hover:border-[#BFDBFE] hover:bg-[#EFF6FF] text-[#64748B] hover:text-[#3B82F6] flex items-center justify-center shadow-2xs transition-all duration-200 cursor-pointer"
-            >
-              <Github className="w-4 h-4" />
-            </motion.a>
-
-            {/* LinkedIn Button */}
-            <motion.a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              whileHover={{ y: -3, scale: 1.08 }}
-              whileTap={{ scale: 0.92 }}
-              transition={{ duration: 0.2 }}
-              className="w-9 h-9 rounded-[10px] bg-white border border-[#E2E8F0] hover:border-[#BFDBFE] hover:bg-[#EFF6FF] text-[#64748B] hover:text-[#3B82F6] flex items-center justify-center shadow-2xs transition-all duration-200 cursor-pointer"
-            >
-              <Linkedin className="w-4 h-4" />
-            </motion.a>
-
-            {/* X (formerly Twitter) Button */}
-            <motion.a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X (Twitter)"
-              whileHover={{ y: -3, scale: 1.08 }}
-              whileTap={{ scale: 0.92 }}
-              transition={{ duration: 0.2 }}
-              className="w-9 h-9 rounded-[10px] bg-white border border-[#E2E8F0] hover:border-[#BFDBFE] hover:bg-[#EFF6FF] text-[#64748B] hover:text-[#3B82F6] flex items-center justify-center shadow-2xs transition-all duration-200 cursor-pointer"
-            >
-              {/* Clean X icon */}
-              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </motion.a>
-          </div>
         </div>
 
         {/* Divider */}
