@@ -1,6 +1,7 @@
 import IntroScreen from "@/components/IntroScreen";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import FeaturedWork from "@/components/FeaturedWork";
 import TechStack from "@/components/TechStack";
 import Pricing from "@/components/Pricing";
@@ -22,6 +23,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <Hero />
+
+      {/* About Me Section (2 Years Experience & Freelance Bio) */}
+      <About />
 
       {/* Shipped Projects / Featured Work Section */}
       <FeaturedWork />
